@@ -92,8 +92,8 @@ https://www.themoviedb.org/
 ## Code References
 
 - I used code from [ionicframework.com](https://ionicframework.com/docs/api/button) to figure out how to add icons to a button
-- I used code from [stackoverflow.com](https://stackoverflow.com/questions/45247490/right-alignment-for-a-button-in-ion-col) to align a button to the right of another element
-
+- I used code from [stackoverflow.com](https://stackoverflow.com/questions/45247490/right-alignment-for-a-button-in-ion-col) to align a button to the right of another element and to make a button fill the length of a page 
+- I used code from lecture notes on how to create an ionic app to add a router link to my favourites button
 ---
 ## Author
 
