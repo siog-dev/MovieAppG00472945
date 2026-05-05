@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 // import IonIcon
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonItem, IonLabel, IonIcon, IonInput } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonItem, IonLabel, IonIcon, IonInput, IonButtons } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons'; // add specific icons
 import { heart } from 'ionicons/icons'; // name the icons
 import { RouterLink } from '@angular/router'; // manually import RouterLink (lecture notes, create an ionic app)
@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router'; // manually import RouterLink (lec
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonItem, IonLabel, IonIcon, RouterLink, IonInput],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonItem, IonLabel, IonIcon, RouterLink, IonInput, IonButtons],
 })
 export class HomePage {
   constructor() {
