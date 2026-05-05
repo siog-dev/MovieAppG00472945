@@ -87,10 +87,6 @@ https://www.themoviedb.org/
 - A more descriptive name such as **"Person Details"** would improve clarity, particularly because the application also includes a Movie Details page.  
 - The original naming was retained to remain consistent with the project requirements.
 
-- If API data is missing (e.g. no biography or dates), those fields are not displayed.
-- If data is not relevent to that person, that field is no displayed.  
-- If no image is available, a placeholder ("No picture") is shown instead.
-
 ---
 
 ## Author
