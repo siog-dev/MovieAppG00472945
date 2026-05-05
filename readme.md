@@ -86,6 +86,7 @@ https://www.themoviedb.org/
 - The page name **"Details"** was kept as specified in the assignment brief.  
 - A more descriptive name such as **"Person Details"** would improve clarity, particularly because the application also includes a Movie Details page.  
 - The original naming was retained to remain consistent with the project requirements.
+- Added "clear input" functionality to the search bar
 
 ---
 
@@ -94,7 +95,7 @@ https://www.themoviedb.org/
 - I used code from [ionicframework.com](https://ionicframework.com/docs/api/button) to figure out how to add icons to a button
 - I used code from [stackoverflow.com](https://stackoverflow.com/questions/45247490/right-alignment-for-a-button-in-ion-col) to align a button to the right of another element and to make a button fill the length of a page 
 - I lecture notes on how to create an ionic app to add a router link to my favourites button
-- I used [ionicframework.com](https://ionicframework.com/docs/api/searchbar) to write the code for the searchbar
+- I used [ionicframework.com](https://ionicframework.com/docs/api/searchbar) to write the code for the searchbar, which was later replaced with code from lecture notes and [ionicframework.com](https://ionicframework.com/docs/api/input)
 
 ---
 ## Author
