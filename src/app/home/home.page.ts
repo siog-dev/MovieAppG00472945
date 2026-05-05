@@ -4,7 +4,6 @@ import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/stan
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
-  styleUrls: [],
   imports: [IonHeader, IonToolbar, IonTitle, IonContent],
 })
 export class HomePage {
