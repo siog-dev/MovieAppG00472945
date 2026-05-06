@@ -102,6 +102,9 @@ https://www.themoviedb.org/
 - Lecture notes used app.config.ts for adding the HttpClient to the list of providers. Struggled to find alternative documentation. Eventually found solution on [angular.dev](https://angular.dev/guide/http/setup). Reconfigured the code for my project.
 - Used [ionicframework.com](https://ionicframework.com/docs/api/card) documentation for creating the ion-cards
 - Used the image basics page on [themoviedb.org](https://developer.themoviedb.org/docs/image-basics) to learn how to link the path to the images and the configuration details page on [themoviedb.org](https://developer.themoviedb.org/reference/configuration-details) for image sizes
+- To make search terms URL safe I used [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent)
+- Searching for movies [TMDB](https://developer.themoviedb.org/docs/search-and-query-for-details), [TMDB](https://developer.themoviedb.org/reference/search-movie)
+- 
 
 ---
 ## Author

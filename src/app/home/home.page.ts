@@ -38,7 +38,18 @@ export class HomePage {
   }
 
   onSearch() {
-    console.log(this.searchTerm); // print the input to console when search is pressed
+    const searchUrl = "https://api.themoviedb.org/3/search/movie?api_key=862da29609cec096571a286070ebb32d&query=" + encodeURIComponent(this.searchTerm);
+    
+    this.mhs.get(searchUrl).subscribe(
+      {
+        next: (data) => {
+          console.log(data);
+          this.movies = data.results;
+        },
+        error: (error) => console.error("error", error),
+        complete: () => console.log("complete")
+      }
+    )
   }
-
+  
 }
