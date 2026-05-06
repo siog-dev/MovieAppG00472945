@@ -1,3 +1,4 @@
+<!--header with app title(student number) and favourites button-->
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>G00472945</ion-title>
@@ -17,9 +18,11 @@
   <!--click = event binding, onSearch() is called on a click event-->
   <ion-button (click)="onSearch()" expand="full" >SEARCH</ion-button>
   <ul>
+    <!--ngFor loops through the movies array and creates a list of items-->
     <li *ngFor="let movie of movies">
       <ion-card>
         <img src="https://image.tmdb.org/t/p/w185{{movie.poster_path}}"/>
+        <!--movie.id and movie.poster_path are currently displayed for testing purposes-->
         <ion-card-content>{{movie.id}} - {{ movie.overview }} - {{movie.poster_path}}</ion-card-content>
       </ion-card>
     </li>
