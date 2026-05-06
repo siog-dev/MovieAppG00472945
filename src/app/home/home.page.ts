@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonIcon, IonInput, IonButtons, IonCard, IonCardHeader, IonCardTitle, IonCardContent } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonIcon, IonInput, IonButtons, IonCard, IonCardContent } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons'; // add specific icons
 import { heart } from 'ionicons/icons'; // name the icons
 import { RouterLink } from '@angular/router'; // manually import RouterLink (lecture notes, create an ionic app)
@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonIcon, RouterLink, IonInput, IonButtons, FormsModule, CommonModule, IonCard, IonCardHeader, IonCardTitle, IonCardContent],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonIcon, RouterLink, IonInput, IonButtons, FormsModule, CommonModule, IonCard, IonCardContent],
 })
 export class HomePage {
 
