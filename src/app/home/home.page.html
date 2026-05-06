@@ -16,5 +16,9 @@
   <ion-input label="Search" [(ngModel)]="searchTerm" [clearInput]="true" placeholder="Movie Name"></ion-input>
   <!--click = event binding, onSearch() is called on a click event-->
   <ion-button (click)="onSearch()" expand="full" >SEARCH</ion-button>
-  <h4>Today's Trending Movies</h4>
+  <ul>
+    <li *ngFor="let movie of movies">
+      {{ movie.overview }}
+    </li>
+  </ul>
 </ion-content>
