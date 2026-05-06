@@ -96,6 +96,8 @@ https://www.themoviedb.org/
 - I used code from [stackoverflow.com](https://stackoverflow.com/questions/45247490/right-alignment-for-a-button-in-ion-col) to align a button to the right of another element and to make a button fill the length of a page 
 - I lecture notes on how to create an ionic app to add a router link to my favourites button
 - I used [ionicframework.com](https://ionicframework.com/docs/api/searchbar) to write the code for the searchbar, which was later replaced with code from lecture notes and [ionicframework.com](https://ionicframework.com/docs/api/input)
+- Amended my homepage header as per documentation on [ionicframework.com](https://ionicframework.com/docs/api/toolbar) regarding buttons in toolbars
+- Connected the search bar and the search button as per lecture notes (data binding & directives)
 
 ---
 ## Author
