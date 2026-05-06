@@ -5,10 +5,10 @@
   
     <ion-buttons slot="end">
       <!--code to add a button to the right of another element, routing to favourites page-->
-      <ion-button [routerLink]="['/home']" fill="clear">
+      <ion-button [routerLink]="['/home']">
         <ion-icon name="home-outline"></ion-icon>
       </ion-button>
-      <ion-button [routerLink]="['/favourites']" fill="clear">
+      <ion-button [routerLink]="['/favourites']">
         <ion-icon name="heart"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -16,9 +16,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">movie-details</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<p>{{details.overview}}</p>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-button (click)="addToFavourites()" fill="solid">
+        <ion-icon slot="start" name="heart-outline"></ion-icon>
+          ADD TO FAVOURITES 
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-content>

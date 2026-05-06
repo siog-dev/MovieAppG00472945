@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonIcon, IonInput, IonButtons, IonCard, IonCardContent } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons'; // add specific icons
-import { heart } from 'ionicons/icons'; // name the icons
+import { heart } from 'ionicons/icons'; // name of the icons
 import { RouterLink } from '@angular/router'; // manually import RouterLink (lecture notes, create an ionic app)
 import { FormsModule } from '@angular/forms'; // for ngModel use
 import { MyHttp } from '../services/my-http'; // get my own http service for use in here
@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HomePage {
 
+  key:string = "api_key=862da29609cec096571a286070ebb32d";
   searchTerm = ""; // string entered into the search input box will be stored here
   movies:any = []; // array of movie results
 
@@ -29,7 +30,7 @@ export class HomePage {
   // method to get the trending movies results
   getTrending() {
     // api call
-    this.mhs.get("https://api.themoviedb.org/3/trending/movie/day?api_key=862da29609cec096571a286070ebb32d").subscribe(
+    this.mhs.get("https://api.themoviedb.org/3/trending/movie/day?" + this.key).subscribe(
       {
         next: (data) => { 
           console.log(data); // log for debugging
@@ -42,7 +43,7 @@ export class HomePage {
 
   // method to get movie results following a search
   onSearch() {
-    const searchUrl = "https://api.themoviedb.org/3/search/movie?api_key=862da29609cec096571a286070ebb32d&query=" + encodeURIComponent(this.searchTerm);
+    const searchUrl = "https://api.themoviedb.org/3/search/movie?" + this.key + "&query=" + encodeURIComponent(this.searchTerm);
     
     this.mhs.get(searchUrl).subscribe(
       {
