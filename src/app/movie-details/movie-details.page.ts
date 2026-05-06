@@ -7,6 +7,7 @@ import { addIcons } from 'ionicons'; // add specific icons
 import { heart, homeOutline, heartOutline } from 'ionicons/icons'; // name of the icons
 import { ActivatedRoute } from '@angular/router'; // for adding params to routes
 import { MyHttp } from '../services/my-http';
+import { MyFavourites } from '../services/my-favourites';
 
 @Component({
   selector: 'app-movie-details',
@@ -20,7 +21,7 @@ export class MovieDetailsPage implements OnInit {
   movieId: any;
   details:any = [];
 
-  constructor(private route: ActivatedRoute, private mhs: MyHttp) {
+  constructor(private route: ActivatedRoute, private mhs: MyHttp, private mfs: MyFavourites) {
     addIcons({heart, homeOutline, heartOutline}); // register the icons for use everywhere
   }
 
@@ -48,8 +49,8 @@ export class MovieDetailsPage implements OnInit {
     )
   }
 
-  addToFavourites() {
-    console.log(this.details)
+  addFavourites() {
+    this.mfs.addFavourites(this.details);
   }
 
 }
