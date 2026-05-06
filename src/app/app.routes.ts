@@ -15,7 +15,7 @@ export const routes: Routes = [
     loadComponent: () => import('./favourites/favourites.page').then( m => m.FavouritesPage)
   },
   {
-    path: 'movie-details',
+    path: 'movie-details/:id', // add id to end of the route
     loadComponent: () => import('./movie-details/movie-details.page').then( m => m.MovieDetailsPage)
   },
   {

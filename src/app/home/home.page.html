@@ -20,7 +20,8 @@
   <ul>
     <!--ngFor loops through the movies array and creates a list of items-->
     <li *ngFor="let movie of movies" style="list-style-type: none;">
-      <ion-card [routerLink]="['/movie-details']">
+      <!--route to the movie-details page with this cards movie.id at the end-->
+      <ion-card [routerLink]="['/movie-details', movie.id]">
         <img src="https://image.tmdb.org/t/p/w185{{movie.poster_path}}"/>
         <!--movie.id and movie.poster_path are currently displayed for testing purposes-->
         <ion-card-content>{{ movie.overview }}</ion-card-content>

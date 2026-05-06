@@ -1,6 +1,17 @@
+<!--header with page title(movie name), home button and favourites button-->
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>movie-details</ion-title>
+    <ion-title>Movie ID: {{ movieId }}</ion-title>
+  
+    <ion-buttons slot="end">
+      <!--code to add a button to the right of another element, routing to favourites page-->
+      <ion-button [routerLink]="['/home']" fill="clear">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-button>
+      <ion-button [routerLink]="['/favourites']" fill="clear">
+        <ion-icon name="heart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
