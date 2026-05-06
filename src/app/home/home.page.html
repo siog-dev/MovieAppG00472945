@@ -18,7 +18,12 @@
   <ion-button (click)="onSearch()" expand="full" >SEARCH</ion-button>
   <ul>
     <li *ngFor="let movie of movies">
-      {{ movie.overview }}
+      <ion-card>
+        <img src="https://image.tmdb.org/t/p/w185{{movie.poster_path}}"/>
+        <ion-card-content>{{movie.id}} - {{ movie.overview }} - {{movie.poster_path}}</ion-card-content>
+      </ion-card>
     </li>
   </ul>
 </ion-content>
+
+
