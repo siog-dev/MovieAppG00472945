@@ -13,6 +13,7 @@ A movie application for mobile devices which uses TMDB as an API and allows user
 - Use a **search bar** to find movies
 - **See details** about movies and cast and crew
 - **Add and remove** movies from **Favourites**
+  - Button will change between outline and fill respective to add and remove functionality
 - **Access Favourites** from the favourites icon
 - **Remember Favourites** when the app is closed and re-opened
 
@@ -57,6 +58,7 @@ A movie application for mobile devices which uses TMDB as an API and allows user
 - TypeScript
 - Visual Studio Code
 - [TMDB](https://www.themoviedb.org) API
+- ionic/storage-angular
 
 ---
 
