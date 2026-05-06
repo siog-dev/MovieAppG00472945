@@ -104,7 +104,7 @@ https://www.themoviedb.org/
 - Used the image basics page on [themoviedb.org](https://developer.themoviedb.org/docs/image-basics) to learn how to link the path to the images and the configuration details page on [themoviedb.org](https://developer.themoviedb.org/reference/configuration-details) for image sizes
 - To make search terms URL safe I used [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent)
 - Searching for movies [TMDB](https://developer.themoviedb.org/docs/search-and-query-for-details), [TMDB](https://developer.themoviedb.org/reference/search-movie)
-- 
+- Routing to other pages [TMDB](https://ionicframework.com/docs/angular/navigation)
 
 ---
 ## Author
