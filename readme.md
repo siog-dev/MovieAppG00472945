@@ -98,6 +98,7 @@ https://www.themoviedb.org/
 - I used [ionicframework.com](https://ionicframework.com/docs/api/searchbar) to write the code for the searchbar, which was later replaced with code from lecture notes and [ionicframework.com](https://ionicframework.com/docs/api/input)
 - Amended my homepage header as per documentation on [ionicframework.com](https://ionicframework.com/docs/api/toolbar) regarding buttons in toolbars
 - Connected the search bar and the search button as per lecture notes (data binding & directives)
+- Created the http client as per lecture notes (http client) (commit a8d0308 and f3966d5)
 
 ---
 ## Author
