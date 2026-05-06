@@ -108,6 +108,9 @@ https://www.themoviedb.org/
 - Searching for movies [TMDB](https://developer.themoviedb.org/docs/search-and-query-for-details), [TMDB](https://developer.themoviedb.org/reference/search-movie)
 - Routing to other pages [TMDB](https://ionicframework.com/docs/angular/navigation)
 - To get the ID of the recently "clicked" movie, for use on the movie-details page [stackoverflow.com](https://stackoverflow.com/questions/62437102/angular-activatedroute-parammap-getid-not-working-as-expected) and [angular.dev](https://angular.dev/api/router/ActivatedRoute) and [stackoverflow](https://stackoverflow.com/questions/56271351/how-to-get-id-from-the-url-using-snapshot-or-activatedroute-subscriber-in-angula)
+- Lecture notes on Ionic Storage used for importing storage modules, creating the data service
+
+
 
 ---
 ## Author
