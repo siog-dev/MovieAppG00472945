@@ -12,7 +12,9 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-input label="Search" [clearInput]="true"  placeholder="Movie Name"></ion-input>
-  <ion-button expand="full">SEARCH</ion-button>
+  <!--ngModel = two-way data binding, binding input value to 'searchTerm'-->
+  <ion-input label="Search" [(ngModel)]="searchTerm" [clearInput]="true" placeholder="Movie Name"></ion-input>
+  <!--click = event binding, onSearch() is called on a click event-->
+  <ion-button (click)="onSearch()" expand="full" >SEARCH</ion-button>
   <h4>Today's Trending Movies</h4>
 </ion-content>
