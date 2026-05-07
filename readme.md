@@ -110,7 +110,8 @@ https://www.themoviedb.org/
 - To get the ID of the recently "clicked" movie, for use on the movie-details page [stackoverflow.com](https://stackoverflow.com/questions/62437102/angular-activatedroute-parammap-getid-not-working-as-expected) and [angular.dev](https://angular.dev/api/router/ActivatedRoute) and [stackoverflow](https://stackoverflow.com/questions/56271351/how-to-get-id-from-the-url-using-snapshot-or-activatedroute-subscriber-in-angula)
 - Lecture notes on "Ionic Storage" used for importing storage modules, creating the data service, also [angular.dev](https://angular.dev/guide/di/creating-and-using-services), and lecture notes for "Data as objects"for storage along with [ionicframework.com](https://ionicframework.com/docs/v3/storage/)
 - Return an empty array if nothing is stored yet [medium](https://blog.devgenius.io/typescript-when-to-use-null-undefined-or-empty-array-d45244ffc565)
-- Test if one at least one element qualifies docs [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some) and example usage on [ionicframework.com](https://ionicframework.com/docs/api/)
+- Test if one at least one element qualifies -> .some() docs: [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some) and example usage on [ionicframework.com](https://ionicframework.com/docs/api/)
+- Creates a new array with elements that pass specified conditions (remove a favourite movie) -> .filter() docs: [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 
 ## Author
 

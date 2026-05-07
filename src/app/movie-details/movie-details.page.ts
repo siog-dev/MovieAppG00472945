@@ -57,7 +57,8 @@ export class MovieDetailsPage implements OnInit {
   }
 
   async removeFavourites() {
-    console.log("yeah, the button was pressed alrigh")
+    await this.mfs.removeFavourite(this.details.id);
+    this.isFavourite = false;
   }
 
 }

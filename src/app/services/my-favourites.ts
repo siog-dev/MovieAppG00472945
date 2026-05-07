@@ -30,5 +30,15 @@ export class MyFavourites {
     // * does movie.id(the id of the data item from our favourites array) match the movieID(current movie in movie details)
     return favourites.some((movie: any) => movie.id === movieId);
   }
+
+  async removeFavourite(movieId: number) {
+    const favourites = await this.getFavourites();
+
+    // Creates a new array that contains all movies except the one with this id
+    // /filter() keeps all items in the array (favourites array) that do NOT match this id
+    const updatedFavourites = favourites.filter((movie: any) => movie.id !== movieId);
+  
+    await this.data.set(this.key, updatedFavourites);
+  }
   
 }
