@@ -19,7 +19,7 @@ export const routes: Routes = [
     loadComponent: () => import('./movie-details/movie-details.page').then( m => m.MovieDetailsPage)
   },
   {
-    path: 'details',
+    path: 'details/:id', // add id to end of the route
     loadComponent: () => import('./details/details.page').then( m => m.DetailsPage)
   },
 ];

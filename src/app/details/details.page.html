@@ -1,13 +1,29 @@
+<!--header with page title(movie name), home button and favourites button-->
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>details</ion-title>
+    <ion-title>{{ person.name }}</ion-title>
+  
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/home']">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-button>
+      <ion-button [routerLink]="['/favourites']">
+        <ion-icon name="heart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">details</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+    <img src="https://image.tmdb.org/t/p/w185{{person.profile_path}}"/>
+
+    <ion-card-content>
+      <p>{{ person.birthday }}</p>
+      <p>{{ person.deathday }}</p>
+      <p>{{ person.also_known_as }}</p>
+      <p>{{ person.place_of_birth }}</p>
+      <p>{{ person.biography }}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
