@@ -21,7 +21,9 @@ export class MovieDetailsPage implements OnInit {
   movieId: any;
   details:any = [];
   isFavourite = false;
-  information:any = [];
+  castInformation:any = [];
+  crewInformation:any = [];
+
 
   constructor(private route: ActivatedRoute, private mhs: MyHttp, private mfs: MyFavourites) {
     addIcons({heart, homeOutline, heartOutline}); // register the icons for use everywhere
@@ -71,7 +73,8 @@ export class MovieDetailsPage implements OnInit {
       {
         next: (data) => { 
           console.log(data); // log for debugging
-          this.information = data.cast; // assign the 'results' from API data to the movies array
+          this.castInformation = data.cast;
+          this.crewInformation = data.crew;
         },
         error: (error) => console.error("error", error),
         complete: () => console.log("complete")

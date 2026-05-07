@@ -28,10 +28,16 @@
   </ion-button>
 
   <ul>
-    <li *ngFor="let info of information" style="list-style-type: none;">
+    <li *ngFor="let info of castInformation" style="list-style-type: none;">
       <ion-card>
         <img src="https://image.tmdb.org/t/p/w185{{info.profile_path}}"/>
         <ion-card-content>{{ info.name }} as {{ info.character }}</ion-card-content>
+      </ion-card>
+    </li>
+    <li *ngFor="let info of crewInformation" style="list-style-type: none;">
+      <ion-card>
+        <img src="https://image.tmdb.org/t/p/w185{{info.profile_path}}"/>
+        <ion-card-content>{{ info.name }} {{ info.job }}</ion-card-content>
       </ion-card>
     </li>
   </ul>
