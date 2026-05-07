@@ -20,6 +20,7 @@ export class MovieDetailsPage implements OnInit {
   key:string = "api_key=862da29609cec096571a286070ebb32d";
   movieId: any;
   details:any = [];
+  isFavourite = false;
 
   constructor(private route: ActivatedRoute, private mhs: MyHttp, private mfs: MyFavourites) {
     addIcons({heart, homeOutline, heartOutline}); // register the icons for use everywhere
@@ -39,9 +40,10 @@ export class MovieDetailsPage implements OnInit {
     console.log(movieUrl);
     this.mhs.get(movieUrl).subscribe(
       {
-        next: (data) => {
+        next: async (data) => {
           console.log(data);
           this.details = data;
+          this.isFavourite = await this.mfs.isFavourite(this.details.id);
         },
         error: (error) => console.error("error", error),
         complete: () => console.log("complete")
@@ -49,8 +51,13 @@ export class MovieDetailsPage implements OnInit {
     )
   }
 
-  addFavourites() {
-    this.mfs.addFavourites(this.details);
+  async addFavourites() {
+    await this.mfs.addFavourites(this.details);
+    this.isFavourite = true;
+  }
+
+  async removeFavourites() {
+    console.log("yeah, the button was pressed alrigh")
   }
 
 }

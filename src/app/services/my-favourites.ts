@@ -22,5 +22,11 @@ export class MyFavourites {
 
     await this.data.set(this.key, favourites);
   }
+
+  async isFavourite(movieId: number) {
+    const favourites = await this.getFavourites();
+
+    return favourites.some((movie: any) => movie.id === movieId);
+  }
   
 }

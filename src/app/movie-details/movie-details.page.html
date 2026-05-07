@@ -17,8 +17,13 @@
 
 <ion-content [fullscreen]="true">
 <p>{{details.overview}}</p>
-  <ion-button (click)="addFavourites()" fill="outline">
+  <ion-button *ngIf="!isFavourite" (click)="addFavourites()" fill="outline">
     <ion-icon slot="start" name="heart-outline"></ion-icon>
     ADD TO FAVOURITES 
+  </ion-button>
+
+  <ion-button *ngIf="isFavourite" (click)="removeFavourites()">
+    <ion-icon slot="start" name="heart"></ion-icon>
+    REMOVE FROM FAVOURITES
   </ion-button>
 </ion-content>
