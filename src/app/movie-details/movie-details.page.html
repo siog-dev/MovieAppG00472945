@@ -16,7 +16,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-<p>{{details.overview}}</p>
+  <p>{{details.overview}}</p>
   <ion-button *ngIf="!isFavourite" (click)="addFavourites()" fill="outline">
     <ion-icon slot="start" name="heart-outline"></ion-icon>
     ADD TO FAVOURITES 
@@ -26,4 +26,14 @@
     <ion-icon slot="start" name="heart"></ion-icon>
     REMOVE FROM FAVOURITES
   </ion-button>
+
+  <ul>
+    <li *ngFor="let info of information" style="list-style-type: none;">
+      <ion-card>
+        <img src="https://image.tmdb.org/t/p/w185{{info.profile_path}}"/>
+        <ion-card-content>{{ info.name }} as {{ info.character }}</ion-card-content>
+      </ion-card>
+    </li>
+  </ul>
+
 </ion-content>

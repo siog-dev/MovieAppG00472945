@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonCardContent, IonCard } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons'; // add specific icons
 import { heart, homeOutline, heartOutline } from 'ionicons/icons'; // name of the icons
 import { ActivatedRoute } from '@angular/router'; // for adding params to routes
@@ -13,7 +13,7 @@ import { MyFavourites } from '../services/my-favourites';
   selector: 'app-movie-details',
   templateUrl: './movie-details.page.html',
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonButton, IonIcon, RouterLink],
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonButton, IonIcon, RouterLink, IonCardContent, IonCard],
 })
 export class MovieDetailsPage implements OnInit {
 
@@ -21,6 +21,7 @@ export class MovieDetailsPage implements OnInit {
   movieId: any;
   details:any = [];
   isFavourite = false;
+  information:any = [];
 
   constructor(private route: ActivatedRoute, private mhs: MyHttp, private mfs: MyFavourites) {
     addIcons({heart, homeOutline, heartOutline}); // register the icons for use everywhere
@@ -44,6 +45,7 @@ export class MovieDetailsPage implements OnInit {
           console.log(data);
           this.details = data;
           this.isFavourite = await this.mfs.isFavourite(this.details.id);
+          this.getInformation();
         },
         error: (error) => console.error("error", error),
         complete: () => console.log("complete")
@@ -59,6 +61,21 @@ export class MovieDetailsPage implements OnInit {
   async removeFavourites() {
     await this.mfs.removeFavourite(this.details.id);
     this.isFavourite = false;
+  }
+
+  getInformation() {
+    const InformationUrl = "https://api.themoviedb.org/3/movie/" + this.details.id + "/credits?" + this.key;
+    console.log(InformationUrl);
+
+    this.mhs.get(InformationUrl).subscribe(
+      {
+        next: (data) => { 
+          console.log(data); // log for debugging
+          this.information = data.cast; // assign the 'results' from API data to the movies array
+        },
+        error: (error) => console.error("error", error),
+        complete: () => console.log("complete")
+    })
   }
 
 }
