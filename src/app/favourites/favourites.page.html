@@ -18,7 +18,7 @@
       <ion-card>
         <img src="https://image.tmdb.org/t/p/original{{fave.poster_path}}" width="200" height="200"/>
         <ion-card-content>{{ fave.original_title }}</ion-card-content>
-        <ion-button>DETAILS</ion-button>
+        <ion-button [routerLink]="['/movie-details', fave.id]">DETAILS</ion-button>
       </ion-card>
     </li>
   </ul>
