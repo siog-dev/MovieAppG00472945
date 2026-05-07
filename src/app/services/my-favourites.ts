@@ -26,6 +26,8 @@ export class MyFavourites {
   async isFavourite(movieId: number) {
     const favourites = await this.getFavourites();
 
+    // .some() checks if any item in the array (the favourites array) matches this (*) condition
+    // * does movie.id(the id of the data item from our favourites array) match the movieID(current movie in movie details)
     return favourites.some((movie: any) => movie.id === movieId);
   }
   
