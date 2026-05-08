@@ -6,13 +6,13 @@ import { MyHttp } from '../services/my-http';
 import { addIcons } from 'ionicons'; // add specific icons
 import { heart, homeOutline, heartOutline } from 'ionicons/icons'; // name of the icons
 import { ActivatedRoute } from '@angular/router'; // for adding params to routes
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonCardContent, IonCard, IonItem, IonLabel, IonList } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonCardContent, IonCard, IonItem, IonLabel, IonList, IonAccordionGroup, IonAccordion, IonThumbnail } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.page.html',
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonButton, IonIcon, RouterLink, IonCardContent, IonCard, IonItem, IonLabel, IonList]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonButton, IonIcon, RouterLink, IonCardContent, IonCard, IonItem, IonLabel, IonList, IonAccordionGroup, IonAccordion, IonThumbnail]
 })
 export class DetailsPage implements OnInit {
 
@@ -41,7 +41,25 @@ export class DetailsPage implements OnInit {
         next: (data) => { 
           console.log(data); // log for debugging
           this.person = data;
-          // this.getOtherMovies();
+          this.getOtherMovies();
+        },
+        error: (error) => console.error("error", error),
+        complete: () => console.log("complete")
+    })
+  }
+
+  getOtherMovies() {
+    this.personId = this.route.snapshot.paramMap.get('id');
+
+    const personUrl = "https://api.themoviedb.org/3/person/" + this.personId + "/movie_credits?" + this.key;
+    console.log(personUrl);
+
+    this.mhs.get(personUrl).subscribe(
+      {
+        next: (data) => { 
+          console.log(data); // log for debugging
+          this.castOther = data.cast;
+          this.crewOther = data.crew;
         },
         error: (error) => console.error("error", error),
         complete: () => console.log("complete")

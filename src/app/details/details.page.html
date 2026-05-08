@@ -15,6 +15,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
   <ion-card>
     <img src="https://image.tmdb.org/t/p/w185{{person.profile_path}}"/>
     <ion-card-content>
@@ -34,4 +35,63 @@
       </ion-list>
     </ion-card-content>
   </ion-card>
+
+  <ion-card>
+    <ion-accordion-group [multiple]="false">
+
+      <ion-accordion value="first">
+        <ion-item slot="header" color="light">
+           <ion-label>Cast</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <ion-list>
+            <ul>
+              <li *ngFor="let ca of castOther" style="list-style-type: none;">
+                <ion-card>
+                  <ion-card-content>
+                    <ion-item>
+                      <ion-label> {{ca.title }} </ion-label>
+                      <ion-thumbnail slot="end">
+                        <img src="https://image.tmdb.org/t/p/w92{{ca.poster_path}}"/>
+                      </ion-thumbnail>
+                    </ion-item>
+                  </ion-card-content>
+                </ion-card>
+              </li>
+            </ul>
+          </ion-list>
+        </div>
+       </ion-accordion>
+
+       <ion-accordion value="second">
+         <ion-item slot="header" color="light">
+           <ion-label>Crew</ion-label>
+         </ion-item>
+         <div class="ion-padding" slot="content">
+          <ion-list>
+            <ul>
+              <li *ngFor="let cr of crewOther" style="list-style-type: none;">
+                <ion-card>
+                  <ion-card-content>
+                    <ion-item>
+                      <ion-label> {{ cr.title }} </ion-label>
+                      <ion-thumbnail>
+                        <img src="https://image.tmdb.org/t/p/w92{{cr.poster_path}}"/>
+                      </ion-thumbnail>
+                    </ion-item>
+                  </ion-card-content>
+                </ion-card>
+              </li>
+            </ul>
+          </ion-list>
+         </div>
+       </ion-accordion>
+     </ion-accordion-group>
+  </ion-card>
+
+    <!--this is here to prevent the crew accordion heading from getting cut off by the scroll-->
+    <ion-item lines="none">
+      <ion-label>&nbsp;</ion-label>
+    </ion-item>
+  
 </ion-content>
