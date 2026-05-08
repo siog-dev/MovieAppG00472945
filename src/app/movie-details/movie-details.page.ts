@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonCardContent, IonCard } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonCardContent, IonCard, IonBackButton } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons'; // add specific icons
 import { heart, homeOutline, heartOutline } from 'ionicons/icons'; // name of the icons
 import { ActivatedRoute } from '@angular/router'; // for adding params to routes
@@ -13,7 +13,7 @@ import { MyFavourites } from '../services/my-favourites';
   selector: 'app-movie-details',
   templateUrl: './movie-details.page.html',
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonButton, IonIcon, RouterLink, IonCardContent, IonCard],
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonButton, IonIcon, RouterLink, IonCardContent, IonCard, IonBackButton],
 })
 export class MovieDetailsPage implements OnInit {
 

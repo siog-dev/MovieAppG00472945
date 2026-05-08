@@ -1,6 +1,11 @@
 <!--header with page title(movie name), home button and favourites button-->
 <ion-header [translucent]="true">
   <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
     <ion-title>{{ person.name }}</ion-title>
   
     <ion-buttons slot="end">

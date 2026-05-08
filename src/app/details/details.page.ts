@@ -6,13 +6,13 @@ import { MyHttp } from '../services/my-http';
 import { addIcons } from 'ionicons'; // add specific icons
 import { heart, homeOutline, heartOutline } from 'ionicons/icons'; // name of the icons
 import { ActivatedRoute } from '@angular/router'; // for adding params to routes
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonCardContent, IonCard, IonItem, IonLabel, IonList, IonAccordionGroup, IonAccordion, IonThumbnail } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonCardContent, IonCard, IonItem, IonLabel, IonList, IonAccordionGroup, IonAccordion, IonThumbnail, IonBackButton } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.page.html',
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonButton, IonIcon, RouterLink, IonCardContent, IonCard, IonItem, IonLabel, IonList, IonAccordionGroup, IonAccordion, IonThumbnail]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonButton, IonIcon, RouterLink, IonCardContent, IonCard, IonItem, IonLabel, IonList, IonAccordionGroup, IonAccordion, IonThumbnail, IonBackButton]
 })
 export class DetailsPage implements OnInit {
 

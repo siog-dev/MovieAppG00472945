@@ -17,6 +17,7 @@
   <ion-input label="Search" [(ngModel)]="searchTerm" [clearInput]="true" placeholder="Movie Name"></ion-input>
   <!--click = event binding, onSearch() is called on a click event-->
   <ion-button (click)="onSearch()" expand="full" >SEARCH</ion-button>
+  <h1>Today's Trending Movies</h1> <!--needs to change to searchTerm during search results-->
   <ul>
     <!--ngFor loops through the movies array and creates a list of items-->
     <li *ngFor="let r of result" style="list-style-type: none;">

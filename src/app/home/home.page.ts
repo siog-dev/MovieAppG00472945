@@ -22,9 +22,15 @@ export class HomePage {
     addIcons({heart}); // register the icons for use everywhere
   }
 
-  // runs when page loads
+  /*
+  // might need this to refresh home on every entry (remove ngOnInit if so)
+  ionViewWillEnter() {
+    this.searchTerm = "";
+    this.getTrending();
+  }*/
+
   ngOnInit() {
-    this.getTrending(); // fetches trending movies
+    this.getTrending();
   }
 
   // method to get the trending movies results
