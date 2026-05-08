@@ -6,19 +6,21 @@ import { MyHttp } from '../services/my-http';
 import { addIcons } from 'ionicons'; // add specific icons
 import { heart, homeOutline, heartOutline } from 'ionicons/icons'; // name of the icons
 import { ActivatedRoute } from '@angular/router'; // for adding params to routes
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonCardContent, IonCard } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonCardContent, IonCard, IonItem, IonLabel, IonList } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.page.html',
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonButton, IonIcon, RouterLink, IonCardContent, IonCard]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonButton, IonIcon, RouterLink, IonCardContent, IonCard, IonItem, IonLabel, IonList]
 })
 export class DetailsPage implements OnInit {
 
   key:string = "api_key=862da29609cec096571a286070ebb32d";
   personId:any;
   person:any = {};
+  castOther:any = {};
+  crewOther:any = {};
 
   constructor(private mhs: MyHttp, private route: ActivatedRoute) { 
     addIcons({heart, homeOutline, heartOutline}); // register the icons for use everywhere
@@ -39,6 +41,7 @@ export class DetailsPage implements OnInit {
         next: (data) => { 
           console.log(data); // log for debugging
           this.person = data;
+          // this.getOtherMovies();
         },
         error: (error) => console.error("error", error),
         complete: () => console.log("complete")

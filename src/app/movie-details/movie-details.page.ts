@@ -19,10 +19,10 @@ export class MovieDetailsPage implements OnInit {
 
   key:string = "api_key=862da29609cec096571a286070ebb32d";
   movieId: any;
-  details:any = [];
+  movie:any = [];
   isFavourite = false;
-  castInformation:any = [];
-  crewInformation:any = [];
+  castMember:any = [];
+  crewMember:any = [];
 
 
   constructor(private route: ActivatedRoute, private mhs: MyHttp, private mfs: MyFavourites) {
@@ -45,9 +45,9 @@ export class MovieDetailsPage implements OnInit {
       {
         next: async (data) => {
           console.log(data);
-          this.details = data;
-          this.isFavourite = await this.mfs.isFavourite(this.details.id);
-          this.getInformation();
+          this.movie = data;
+          this.isFavourite = await this.mfs.isFavourite(this.movie.id);
+          this.getInfo();
         },
         error: (error) => console.error("error", error),
         complete: () => console.log("complete")
@@ -56,25 +56,25 @@ export class MovieDetailsPage implements OnInit {
   }
 
   async addFavourites() {
-    await this.mfs.addFavourites(this.details);
+    await this.mfs.addFavourites(this.movie);
     this.isFavourite = true;
   }
 
   async removeFavourites() {
-    await this.mfs.removeFavourite(this.details.id);
+    await this.mfs.removeFavourite(this.movie.id);
     this.isFavourite = false;
   }
 
-  getInformation() {
-    const InformationUrl = "https://api.themoviedb.org/3/movie/" + this.details.id + "/credits?" + this.key;
-    console.log(InformationUrl);
+  getInfo() {
+    const infoUrl = "https://api.themoviedb.org/3/movie/" + this.movie.id + "/credits?" + this.key;
+    console.log(infoUrl);
 
-    this.mhs.get(InformationUrl).subscribe(
+    this.mhs.get(infoUrl).subscribe(
       {
         next: (data) => { 
           console.log(data); // log for debugging
-          this.castInformation = data.cast;
-          this.crewInformation = data.crew;
+          this.castMember = data.cast;
+          this.crewMember = data.crew;
         },
         error: (error) => console.error("error", error),
         complete: () => console.log("complete")

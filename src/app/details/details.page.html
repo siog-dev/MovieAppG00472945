@@ -17,13 +17,21 @@
 <ion-content [fullscreen]="true">
   <ion-card>
     <img src="https://image.tmdb.org/t/p/w185{{person.profile_path}}"/>
-
     <ion-card-content>
-      <p>{{ person.birthday }}</p>
-      <p>{{ person.deathday }}</p>
-      <p>{{ person.also_known_as }}</p>
-      <p>{{ person.place_of_birth }}</p>
-      <p>{{ person.biography }}</p>
+      <ion-list>
+        <ion-item>
+          <ion-label>{{ person.birthday }} - {{ person.deathday }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>{{ person.also_known_as }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>{{ person.place_of_birth }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>{{ person.biography }}</ion-label>
+        </ion-item>
+      </ion-list>
     </ion-card-content>
   </ion-card>
 </ion-content>

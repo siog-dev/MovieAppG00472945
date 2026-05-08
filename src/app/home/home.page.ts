@@ -15,8 +15,8 @@ import { CommonModule } from '@angular/common';
 export class HomePage {
 
   key:string = "api_key=862da29609cec096571a286070ebb32d";
+  result:any = []; // array of movie results
   searchTerm = ""; // string entered into the search input box will be stored here
-  movies:any = []; // array of movie results
 
   constructor(private mhs: MyHttp) {
     addIcons({heart}); // register the icons for use everywhere
@@ -34,7 +34,7 @@ export class HomePage {
       {
         next: (data) => { 
           console.log(data); // log for debugging
-          this.movies = data.results; // assign the 'results' from API data to the movies array
+          this.result = data.results; // assign the 'results' from API data to the movies array
         },
         error: (error) => console.error("error", error),
         complete: () => console.log("complete")
@@ -49,7 +49,7 @@ export class HomePage {
       {
         next: (data) => {
           console.log(data);
-          this.movies = data.results;
+          this.result = data.results;
         },
         error: (error) => console.error("error", error),
         complete: () => console.log("complete")

@@ -1,7 +1,7 @@
 <!--header with page title(movie name), home button and favourites button-->
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>{{ details.title }}</ion-title>
+    <ion-title>{{ movie.title }}</ion-title>
   
     <ion-buttons slot="end">
       <!--code to add a button to the right of another element, routing to favourites page-->
@@ -16,7 +16,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <p>{{details.overview}}</p>
+  <p>{{movie.overview}}</p>
   <ion-button *ngIf="!isFavourite" (click)="addFavourites()" fill="outline">
     <ion-icon slot="start" name="heart-outline"></ion-icon>
     ADD TO FAVOURITES 
@@ -28,16 +28,16 @@
   </ion-button>
 
   <ul>
-    <li *ngFor="let info of castInformation" style="list-style-type: none;">
-      <ion-card [routerLink]="['/details', info.id]">
-        <img src="https://image.tmdb.org/t/p/w185{{info.profile_path}}"/>
-        <ion-card-content>{{ info.name }} as {{ info.character }}</ion-card-content>
+    <li *ngFor="let ca of castMember" style="list-style-type: none;">
+      <ion-card [routerLink]="['/details', ca.id]">
+        <img src="https://image.tmdb.org/t/p/w185{{ca.profile_path}}"/>
+        <ion-card-content>{{ ca.name }} as {{ ca.character }}</ion-card-content>
       </ion-card>
     </li>
-    <li *ngFor="let info of crewInformation" style="list-style-type: none;">
-      <ion-card [routerLink]="['/movie-details', info.id]">
-        <img src="https://image.tmdb.org/t/p/w185{{info.profile_path}}"/>
-        <ion-card-content>{{ info.name }} {{ info.job }}</ion-card-content>
+    <li *ngFor="let cr of crewMember" style="list-style-type: none;">
+      <ion-card [routerLink]="['/details', cr.id]">
+        <img src="https://image.tmdb.org/t/p/w185{{cr.profile_path}}"/>
+        <ion-card-content>{{ cr.name }} {{ cr.job }}</ion-card-content>
       </ion-card>
     </li>
   </ul>
