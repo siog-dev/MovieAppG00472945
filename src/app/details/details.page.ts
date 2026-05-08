@@ -19,8 +19,8 @@ export class DetailsPage implements OnInit {
   key:string = "api_key=862da29609cec096571a286070ebb32d";
   personId:any;
   person:any = {};
-  castOther:any = {};
-  crewOther:any = {};
+  castOther:any = [];
+  crewOther:any = [];
 
   constructor(private mhs: MyHttp, private route: ActivatedRoute) { 
     addIcons({heart, homeOutline, heartOutline}); // register the icons for use everywhere

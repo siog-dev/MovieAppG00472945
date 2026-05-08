@@ -16,7 +16,9 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
   <p>{{movie.overview}}</p>
+  
   <ion-button *ngIf="!isFavourite" (click)="addFavourites()" fill="outline">
     <ion-icon slot="start" name="heart-outline"></ion-icon>
     ADD TO FAVOURITES 

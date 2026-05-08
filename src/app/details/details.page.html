@@ -49,7 +49,7 @@
               <li *ngFor="let ca of castOther" style="list-style-type: none;">
                 <ion-card>
                   <ion-card-content>
-                    <ion-item>
+                    <ion-item [routerLink]="['/movie-details', ca.id]">
                       <ion-label> {{ca.title }} </ion-label>
                       <ion-thumbnail slot="end">
                         <img src="https://image.tmdb.org/t/p/w92{{ca.poster_path}}"/>
@@ -73,7 +73,7 @@
               <li *ngFor="let cr of crewOther" style="list-style-type: none;">
                 <ion-card>
                   <ion-card-content>
-                    <ion-item>
+                    <ion-item [routerLink]="['/movie-details', cr.id]">
                       <ion-label> {{ cr.title }} </ion-label>
                       <ion-thumbnail>
                         <img src="https://image.tmdb.org/t/p/w92{{cr.poster_path}}"/>
