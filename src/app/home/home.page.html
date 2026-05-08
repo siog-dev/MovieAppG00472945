@@ -4,6 +4,9 @@
     <ion-title>G00472945</ion-title>
   
     <ion-buttons slot="end">
+      <ion-button *ngIf="searchTerm" (click)="resetHome()">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-button>
       <!--code to add a button to the right of another element, routing to favourites page-->
       <ion-button [routerLink]="['/favourites']">
         <ion-icon name="heart"></ion-icon>

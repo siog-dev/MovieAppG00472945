@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonIcon, IonInput, IonButtons, IonCard, IonCardContent } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons'; // add specific icons
-import { heart } from 'ionicons/icons'; // name of the icons
+import { heart, homeOutline } from 'ionicons/icons'; // name of the icons
 import { RouterLink } from '@angular/router'; // manually import RouterLink (lecture notes, create an ionic app)
 import { FormsModule } from '@angular/forms'; // for ngModel use
 import { MyHttp } from '../services/my-http'; // get my own http service for use in here
@@ -19,7 +19,7 @@ export class HomePage {
   searchTerm = ""; // string entered into the search input box will be stored here
 
   constructor(private mhs: MyHttp) {
-    addIcons({heart}); // register the icons for use everywhere
+    addIcons({heart, homeOutline}); // register the icons for use everywhere
   }
 
   /*
@@ -61,6 +61,11 @@ export class HomePage {
         complete: () => console.log("complete")
       }
     )
+  }
+
+  resetHome() {
+    this.searchTerm = "";
+    this.getTrending();
   }
   
 }
