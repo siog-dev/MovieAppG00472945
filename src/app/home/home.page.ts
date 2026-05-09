@@ -21,6 +21,7 @@ export class HomePage {
   key:string = "api_key=862da29609cec096571a286070ebb32d";
   result:any = []; // array of movie results
   searchTerm = ""; // string entered into the search input box will be stored here
+  searchResults = false;
 
   constructor(private mhs: MyHttp) {
     addIcons({heart, homeOutline}); // register the icons for use everywhere
@@ -40,6 +41,7 @@ export class HomePage {
 
   // method to get the trending movies results
   getTrending() {
+    this.searchResults = false;
     // api call
     this.mhs.get("https://api.themoviedb.org/3/trending/movie/day?" + this.key).subscribe(
       {
@@ -54,6 +56,7 @@ export class HomePage {
 
   // method to get movie results following a search
   onSearch() {
+    this.searchResults = true;
     const searchUrl = "https://api.themoviedb.org/3/search/movie?" + this.key + "&query=" + encodeURIComponent(this.searchTerm);
     
     this.mhs.get(searchUrl).subscribe(
