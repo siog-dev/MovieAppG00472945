@@ -35,12 +35,14 @@
   </ion-button>
 
   <ul>
+    <h2>Cast</h2>
     <li *ngFor="let ca of castMember" style="list-style-type: none;">
       <ion-card [routerLink]="['/details', ca.id]">
         <img src="https://image.tmdb.org/t/p/w185{{ca.profile_path}}"/>
         <ion-card-content>{{ ca.name }} as {{ ca.character }}</ion-card-content>
       </ion-card>
     </li>
+    <h2>Crew</h2>
     <li *ngFor="let cr of crewMember" style="list-style-type: none;">
       <ion-card [routerLink]="['/details', cr.id]">
         <img src="https://image.tmdb.org/t/p/w185{{cr.profile_path}}"/>
