@@ -14,6 +14,10 @@ import { CommonModule } from '@angular/common';
 })
 export class HomePage {
 
+  /*
+  // tried to use this to reset scroll ONLY after using home button to nav home (not back)
+  @ViewChild(IonContent) content!: IonContent; */
+
   key:string = "api_key=862da29609cec096571a286070ebb32d";
   result:any = []; // array of movie results
   searchTerm = ""; // string entered into the search input box will be stored here
@@ -26,6 +30,7 @@ export class HomePage {
   // might need this to refresh home on every entry (remove ngOnInit if so)
   ionViewWillEnter() {
     this.searchTerm = "";
+    this.scrollToTop();
     this.getTrending();
   }*/
 
