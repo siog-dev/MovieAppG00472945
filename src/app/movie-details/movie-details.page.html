@@ -38,15 +38,31 @@
     <h2>Cast</h2>
     <li *ngFor="let ca of castMember" style="list-style-type: none;">
       <ion-card [routerLink]="['/details', ca.id]">
-        <img src="https://image.tmdb.org/t/p/w185{{ca.profile_path}}"/>
-        <ion-card-content>{{ ca.name }} as {{ ca.character }}</ion-card-content>
+        <img *ngIf="ca.profile_path" src="https://image.tmdb.org/t/p/w185{{ca.profile_path}}"/>
+        <ion-item *ngIf="!ca.profile_path">
+          <ion-label>
+            No Image
+          </ion-label>
+        </ion-item>
+        <ion-card-content>
+          <ion-item *ngIf="ca.character"><h1>{{ ca.character }}</h1></ion-item>
+          <ion-item *ngIf="ca.name">{{ ca.name }}</ion-item>
+        </ion-card-content>
       </ion-card>
     </li>
     <h2>Crew</h2>
     <li *ngFor="let cr of crewMember" style="list-style-type: none;">
       <ion-card [routerLink]="['/details', cr.id]">
-        <img src="https://image.tmdb.org/t/p/w185{{cr.profile_path}}"/>
-        <ion-card-content>{{ cr.name }} {{ cr.job }}</ion-card-content>
+        <img *ngIf="cr.profile_path" src="https://image.tmdb.org/t/p/w185{{cr.profile_path}}"/>
+        <ion-item *ngIf="!cr.profile_path">
+          <ion-label>
+            No Image
+          </ion-label>
+        </ion-item>
+        <ion-card-content>
+          <ion-item *ngIf="cr.job"><h1>{{ cr.job }}</h1></ion-item>
+          <ion-item *ngIf="cr.name">{{ cr.name }}</ion-item>
+        </ion-card-content>
       </ion-card>
     </li>
   </ul>

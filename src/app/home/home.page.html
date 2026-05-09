@@ -27,12 +27,11 @@
     <li *ngFor="let r of result" style="list-style-type: none;">
       <!--route to the movie-details page with this cards movie.id at the end-->
       <ion-card [routerLink]="['/movie-details', r.id]">
-          <img src="https://image.tmdb.org/t/p/w185{{r.poster_path}}"/>
+        <img *ngIf="r.poster_path" src="https://image.tmdb.org/t/p/w185{{r.poster_path}}"/>
         <ion-item *ngIf="!r.poster_path">
           No Image
         </ion-item>
-        <!--movie.id and movie.poster_path are currently displayed for testing purposes-->
-        <ion-card-content>{{ r.overview }}</ion-card-content>
+        <ion-card-content *ngIf="r.overview">{{ r.overview }}</ion-card-content>
       </ion-card>
     </li>
   </ul>
