@@ -23,9 +23,11 @@ A movie application for mobile devices which uses TMDB as an API and allows user
 
 - **Home Page**
   - The App Name (student number) and Favourites Icon at the top
+  - Favourites icon navigates to the **Favourites Page**
   - A Search Bar (with "Movie Name" as a hint)
   - **Today's Trending Movies**: *displayed when **no** search string is entered in the search bar*
-  - **Search Results**: *displayed when a search string **is** entered in the search bar*
+  - **Search Results**: *displayed when a search string **is** entered in the search bar, **and** the search button has been pressed*
+  - 
 
 - **Movie Details Page**
   - Opened when a movie is clicked
@@ -41,8 +43,7 @@ A movie application for mobile devices which uses TMDB as an API and allows user
     - Date of birth(DOB) and date of death(DOD)
     - Also known as (AKA)
     - Description
-    - Other Movies
-  - If information is not available, it will not be displayed  
+    - Other Movies: an accordion displaying the movies this person was either a cast or crew member of
 
 - **Favourites Page**
   - Opened when the favourites icon is clicked
@@ -89,6 +90,8 @@ https://www.themoviedb.org/
 - A more descriptive name such as **"Person Details"** would improve clarity, particularly because the application also includes a Movie Details page.  
 - The original naming was retained to remain consistent with the project requirements.
 - Added "clear input" functionality to the search bar
+- If information is not available, it will not be displayed
+- If an image is not available, "No image" will be displayed instead
 
 ---
 
